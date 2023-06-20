@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html xmls:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<h1>signup</h1>
-	<a th:href="@{/login}">ログインページ</a>
+	<h1>ログインページ</h1>
+	<form th:action="@{/user/signup}" th:method="post" th:object="${SignupForm}">
+		<label>名前</label>
+		<input type="text" th:field="*{userName}">
+		<label>メールアドレス</label>
+		<input type="text" th:field="*{mail}">
+		<label>パスワード</label>
+		<input type="text" th:field="*{password}">
+		<br/>
+		<input type="submit" value="登録">
+	</form>
 </body>
 </html>

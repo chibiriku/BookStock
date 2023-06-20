@@ -2,16 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- ユーザー登録 -->
-<mapper namespace="com.example.entity.MUser">
+<mapper namespace="com.example.dao.UserInfoMapper">
 	<insert id="insertOne">
-		insert into m_user(
+		insert into muser(
 			 user_name
+			,mail
 			,password
+			,update_date
+			,create_date
 		)
 		
 		values(
 		  #{userName}
+		 ,#{mail}
 		 ,#{password}
+		 ,CURRENT_TIMESTAMP
+		 ,CURRENT_TIMESTAMP
 		)
 	</insert>
 </mapper>
