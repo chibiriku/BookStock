@@ -8,6 +8,7 @@ import lombok.Data;
 public class SignupForm implements Serializable{
 	
 	private String userName;
+	private String userId;
 	private String mail;
 	private String password;
 }
